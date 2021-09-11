@@ -1,0 +1,23 @@
+<html>
+	<head> 
+	<title>Home</title>	
+	</head> 
+	<body>
+        <!--user가 지정되어 있으면 ({}문구는 jinja라는 템플릿 문법임)-->
+		{% if user %}
+            <!--이문구를 출력-->
+			<p>Nice to meet you. {{user}} </p>
+		{% endif %}
+		<h1>This is Home!</h1>
+		<hr>
+
+		<div>
+			<h3>something to do </h3>
+			<ul>
+				<li>eat</li>
+				<li>study</li>
+				<li>watching tv</li>
+			</ul>
+		</div>
+	</body>
+</html>

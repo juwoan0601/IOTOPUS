@@ -1,0 +1,46 @@
+<html>
+	<head> 
+	<title>LED CONTROLLER</title>	
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	</head> 
+	<body>
+		
+		<h1>LED Control</h1>
+		<hr>
+
+		<div style="padding-left:20px;">
+			<h3>RED, GREEN, BLUE</h3>
+				<p >
+					<b>빨간led: {% if led_states['red']==1 %} 켜짐 
+									{% elif led_states['red']==0 %}꺼짐
+									{% endif %}
+					</b>	
+					<a href="{{ url_for('led_switch', color='red', state=1) }}"><input type="button" value="켜기" ></a>
+					<a href="{{ url_for('led_switch', color='red', state=0) }}"> <input type="button" value="끄기"> </a>
+				</p>
+				<p >
+					<b>초록 led: {% if led_states['green']==1 %} 켜짐 
+									{% elif led_states['green']==0 %}꺼짐
+									{% endif %}
+					</b>	
+						
+					<a href="{{ url_for('led_switch', color='green', state=1) }}"><input type="button" value="켜기" ></a>
+					<a href="{{ url_for('led_switch', color='green', state=0) }}"> <input type="button" value="끄기"> </a>
+				</p>
+				<p >
+					<b>파란 led: {% if led_states['blue']==1 %} 켜짐 
+									{% elif led_states['blue']==0 %}꺼짐
+									{% endif %}
+					</b>	
+				
+					<a href="{{ url_for('led_switch', color='blue', state=1) }}"><input type="button" value="켜기" ></a>
+					<a href="{{ url_for('led_switch', color='blue', state=0) }}"> <input type="button" value="끄기"> </a>
+				</p>
+			<h3>전체 led 동시에 켜고 끄기</h3>
+				<p> 
+					<a href="{{ url_for('all_on_off', state=1) }}"> <input type="button" value="켜기"> </a> 
+					<a href="{{ url_for('all_on_off', state=0) }}"> <input type="button" value="끄기"> </a> 
+				</p>
+		</div>
+	</body>
+</html>
