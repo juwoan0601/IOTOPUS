@@ -12,7 +12,7 @@
 			<h3>LED 1-4</h3>
 				<p >
 					<b>LED1: {% if iot_states['LED1']==1 %} 켜짐 
-									{% elif led_states['LED1']==0 %}꺼짐
+									{% elif iot_states['LED1']==0 %}꺼짐
 									{% endif %}
 					</b>	
 					<a href="{{ url_for('iot_switch', SID='LED1', state=1) }}"><input type="button" value="켜기" ></a>
@@ -20,7 +20,7 @@
 				</p>
 				<p >
 					<b>LED2: {% if iot_states['LED2']==1 %} 켜짐 
-									{% elif led_states['LED2']==0 %}꺼짐
+									{% elif iot_states['LED2']==0 %}꺼짐
 									{% endif %}
 					</b>	
 						
@@ -29,7 +29,7 @@
 				</p>
 				<p >
 					<b>LED3: {% if iot_states['LED3']==1 %} 켜짐 
-									{% elif led_states['LED3']==0 %}꺼짐
+									{% elif iot_states['LED3']==0 %}꺼짐
 									{% endif %}
 					</b>	
 				
@@ -38,7 +38,7 @@
 				</p>
 				<p >
 					<b>LED4: {% if iot_states['LED4']==1 %} 켜짐 
-									{% elif led_states['LED4']==0 %}꺼짐
+									{% elif iot_states['LED4']==0 %}꺼짐
 									{% endif %}
 					</b>	
 				

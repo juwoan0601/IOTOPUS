@@ -15,7 +15,7 @@ iot_states = {                           # 전체 디바이스 현황 표시용
 
 @app.route('/')                       # 기본주소('/')로 들어오면
 def home():
-    return render_template('index_LED_SERVO_BLE', iot_states = iot_states)   #index.html에 전체 led현황을 함께 전달 
+    return render_template('index_LED_SERVO_BLE.html', iot_states = iot_states)   #index.html에 전체 led현황을 함께 전달 
 
 @app.route('/<SID>/<int:state>')                                # 개별 led를 켜고 끄는 주소
 def iot_switch(SID, state):                                    # 개별 led ON, OFF 함수
