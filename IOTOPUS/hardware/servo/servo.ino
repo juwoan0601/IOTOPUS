@@ -7,7 +7,7 @@
 SoftwareSerial BTSerial(2,3);
 Servo servo; 
 
-int angle = onAngle; // servo position in degrees 
+int angle = offAngle; // servo position in degrees 
 int state = false; // on/off state
 
 void setup() 
@@ -22,14 +22,14 @@ void loop() {
   while (BTSerial.available()){
     byte data = BTSerial.read();
     Serial.println(data);
-    if (data == '0' && state == true) {
+    if (data == '1' && state == true) {
       for(angle = onAngle; angle < offAngle; angle++) { 
         servo.write(angle); 
         delay(15);  
       }
       state = false;
     }
-    if (data == '1' && state == false) {
+    else if (data == '1' && state == false) {
       for(angle = offAngle; angle > onAngle; angle--) { 
         servo.write(angle); 
         delay(15);  
@@ -41,14 +41,14 @@ void loop() {
   while (Serial.available()){
     byte data = Serial.read();
     Serial.println(data);
-    if (data == '0' && state == true) {
+    if (data == '1' && state == true) {
       for(angle = onAngle; angle < offAngle; angle++) { 
         servo.write(angle); 
         delay(15);  
       }
       state = false;
     }
-    if (data == '1' && state == false) {
+    else if (data == '1' && state == false) {
       for(angle = offAngle; angle > onAngle; angle--) { 
         servo.write(angle); 
         delay(15);  
