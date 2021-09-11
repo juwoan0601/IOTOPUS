@@ -20,27 +20,33 @@ def home():
 @app.route('/<SID>/<int:state>')                                # 개별 led를 켜고 끄는 주소
 def iot_switch(SID, state):                                    # 개별 led ON, OFF 함수
     iot_states[SID] = state
-    if SID == 'LED1': os.system('sudo python3 sendLEDCommend.py --msg=1')
-    if SID == 'LED2': os.system('sudo python3 sendLEDCommend.py --msg=2')
-    if SID == 'LED3': os.system('sudo python3 sendLEDCommend.py --msg=3')
-    if SID == 'LED4': os.system('sudo python3 sendLEDCommend.py --msg=4')
-    if SID == 'SRV1': os.system('sudo python3 sendServoCommend.py --msg=1')
+    if (SID == 'LED1') and (state == 1) : os.system('sudo python3 sendLEDCommend.py --msg=1')
+    if (SID == 'LED1') and (state == 0) : os.system('sudo python3 sendLEDCommend.py --msg=2')
+    if (SID == 'LED2') and (state == 1) : os.system('sudo python3 sendLEDCommend.py --msg=3')
+    if (SID == 'LED2') and (state == 0) : os.system('sudo python3 sendLEDCommend.py --msg=4')
+    if (SID == 'LED3') and (state == 1) : os.system('sudo python3 sendLEDCommend.py --msg=5')
+    if (SID == 'LED3') and (state == 0) : os.system('sudo python3 sendLEDCommend.py --msg=6')
+    if (SID == 'LED4') and (state == 1) : os.system('sudo python3 sendLEDCommend.py --msg=7')
+    if (SID == 'LED4') and (state == 0) : os.system('sudo python3 sendLEDCommend.py --msg=8')
+    if (SID == 'SRV1') and (state == 1) : os.system('sudo python3 sendServoCommend.py --msg=1')
+    if (SID == 'SRV1') and (state == 0) : os.system('sudo python3 sendServoCommend.py --msg=2')
     #leds.value=tuple(led_states.values())
     return redirect(url_for('home'))                           # leds의 색상변경이 완료되면 redirect함수를 통해 기본주소('/')으로 이동
 
 @app.route('/all/<int:state>')                                 # 모든 led를 한꺼번에 켜거나 끄는 주소
 def all_on_off(state):                                        # 모든 led를 한꺼번에 켜거나 끄는 함수
     if state is 0:
-            iot_states['LED1']=0
-            iot_states['LED2']=0
-            iot_states['LED3']=0 
-            iot_states['LED4']=0 
+        iot_states['LED1']=0
+        iot_states['LED2']=0
+        iot_states['LED3']=0 
+        iot_states['LED4']=0 
+        os.system('sudo python3 sendLEDCommend.py --msg=2468') 
     elif state is 1: 
         iot_states['LED1']=1
         iot_states['LED2']=1
         iot_states['LED3']=1 
         iot_states['LED4']=1
-    os.system('sudo python3 sendLEDCommend.py --msg=1234') 
+        os.system('sudo python3 sendLEDCommend.py --msg=1357') 
     #leds.value=tuple(led_states.values())
     return redirect(url_for('home'))                     # 모든 led를 켜거나 껐으면 기본주소('/')로 이동
 
