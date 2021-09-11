@@ -1,5 +1,7 @@
 # raspberry-pi setter
-./raspberrypi
+./raspberrypi/SDCardFormatterv5_WinEN
+./raspberrypi/SDCardFormatterv5_WinEN.zip
+./raspberrypi/balenaEtcher-Portable-1.5.122.exe
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
