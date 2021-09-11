@@ -11,37 +11,30 @@
 		<div style="padding-left:20px;">
 			<h3>LED 1-4</h3>
 				<p >
-					LED1: {% if iot_states['LED1']==1 %} <b style="color:green;">켜짐</b> 
-							{% elif iot_states['LED1']==0 %} <b style="color:red;">꺼짐</b>
+					<b>LED1: </b>{% if iot_states['LED1']==1 %} <b style="color:green;">◉ 켜짐</b> 
+							{% elif iot_states['LED1']==0 %} <b style="color:red;">◎ 꺼짐</b>
 							{% endif %}
-					</b>	
 					<a href="{{ url_for('iot_switch', SID='LED1', state=1) }}"><input type="button" value="켜기" ></a>
 					<a href="{{ url_for('iot_switch', SID='LED1', state=0) }}"> <input type="button" value="끄기"> </a>
 				</p>
 				<p >
-					<b>LED2: {% if iot_states['LED2']==1 %} 켜짐 
-									{% elif iot_states['LED2']==0 %} 꺼짐
-									{% endif %}
-					</b>	
-						
+					<b>LED2: </b>{% if iot_states['LED2']==1 %} <b style="color:green;">◉ 켜짐</b> 
+							{% elif iot_states['LED2']==0 %} <b style="color:red;">◎ 꺼짐</b>
+							{% endif %}	
 					<a href="{{ url_for('iot_switch', SID='LED2', state=1) }}"><input type="button" value="켜기" ></a>
 					<a href="{{ url_for('iot_switch', SID='LED2', state=0) }}"> <input type="button" value="끄기"> </a>
 				</p>
 				<p >
-					<b>LED3: {% if iot_states['LED3']==1 %} 켜짐 
-									{% elif iot_states['LED3']==0 %} 꺼짐
-									{% endif %}
-					</b>	
-				
+					<b>LED3: </b>{% if iot_states['LED3']==1 %} <b style="color:green;">◉ 켜짐</b> 
+							{% elif iot_states['LED3']==0 %} <b style="color:red;">◎ 꺼짐</b>
+							{% endif %}	
 					<a href="{{ url_for('iot_switch', SID='LED3', state=1) }}"><input type="button" value="켜기" ></a>
 					<a href="{{ url_for('iot_switch', SID='LED3', state=0) }}"> <input type="button" value="끄기"> </a>
 				</p>
 				<p >
-					<b>LED4: {% if iot_states['LED4']==1 %} 켜짐 
-									{% elif iot_states['LED4']==0 %} 꺼짐
-									{% endif %}
-					</b>	
-				
+					<b>LED4: </b>{% if iot_states['LED4']==1 %} <b style="color:green;">◉ 켜짐</b> 
+							{% elif iot_states['LED4']==0 %} <b style="color:red;">◎ 꺼짐</b>
+							{% endif %}	
 					<a href="{{ url_for('iot_switch', SID='LED4', state=1) }}"><input type="button" value="켜기" ></a>
 					<a href="{{ url_for('iot_switch', SID='LED4', state=0) }}"> <input type="button" value="끄기"> </a>
 				</p>
@@ -51,16 +44,14 @@
 					<a href="{{ url_for('all_on_off', state=0) }}"> <input type="button" value="끄기"> </a> 
 				</p>
 		</div>
-
 		<h1>SERVO Control</h1>
 		<hr>
 		<div style="padding-left:20px;">
 			<h3>전등 스위치 제어</h3>
 			<p >
-				<b>SRV1: {% if iot_states['SRV1']==1 %} 켜짐 
-								{% elif iot_states['SRV1']==0 %} 꺼짐
-								{% endif %}
-				</b>	
+				<b>SRV1: </b>{% if iot_states['SRV1']==1 %} <b style="color:green;">◉ 켜짐</b> 
+							{% elif iot_states['SRV1']==0 %} <b style="color:red;">◎ 꺼짐</b>
+							{% endif %}	
 				<a href="{{ url_for('iot_switch', SID='SRV1', state=1) }}"><input type="button" value="켜기" ></a>
 				<a href="{{ url_for('iot_switch', SID='SRV1', state=0) }}"> <input type="button" value="끄기"> </a>
 			</p>
