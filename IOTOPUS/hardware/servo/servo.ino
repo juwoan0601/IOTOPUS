@@ -4,8 +4,8 @@
 #define servoPinR 10
 #define onAngle 60
 #define offAngle 120
-#define CODE_ON = '1'
-#define CODE_OFF = '2'
+#define CODE_ON '1'
+#define CODE_OFF '2'
 
 SoftwareSerial BTSerial(2,3);
 Servo servoL;
@@ -28,7 +28,7 @@ void loop() {
     byte data = BTSerial.read();
     Serial.println(data);
     if (data == CODE_OFF && state == true) {
-      for(angle = onAngle; angle < offAngle; angle++) { 
+      for(angle = offAngle; angle > onAngle; angle--) { 
         servoL.write(angle); 
         servoR.write(angle); 
         delay(10);  
@@ -36,7 +36,7 @@ void loop() {
       state = false;
     }
     else if (data == CODE_ON && state == false) {
-      for(angle = offAngle; angle > onAngle; angle--) { 
+      for(angle = onAngle; angle < offAngle; angle++) { 
         servoL.write(angle); 
         servoR.write(angle); 
         delay(10);  
@@ -49,7 +49,7 @@ void loop() {
     byte data = Serial.read();
     Serial.println(data);
     if (data == CODE_OFF && state == true) {
-      for(angle = onAngle; angle < offAngle; angle++) { 
+      for(angle = offAngle; angle > onAngle; angle--) {
         servoL.write(angle); 
         servoR.write(angle); 
         delay(10);  
@@ -57,7 +57,7 @@ void loop() {
       state = false;
     }
     else if (data == CODE_ON && state == false) {
-      for(angle = offAngle; angle > onAngle; angle--) { 
+      for(angle = onAngle; angle < offAngle; angle++) { 
         servoL.write(angle); 
         servoR.write(angle); 
         delay(10);  
