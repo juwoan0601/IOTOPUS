@@ -11,8 +11,9 @@ Smart home project with Raspberry Pi and Arduino
 - Demo Environment: Web browser
 
 # Overview
-- /webapp: sources about web application 
-- /hardware: sources about IoT Slave device with arduino
+- IOTOPUS/webapp/: sources for web application 
+- IOTOPUS/hardware/: sources for IoT Slave device with arduino
+- raspberrypi/: sources for raspberrypi SSH and WiFi setting
 
 # TO DO
 - Improve Response time between hub and slave
